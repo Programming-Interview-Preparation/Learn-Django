@@ -18,3 +18,13 @@ class Person(models.Model):
     last_name = models.CharField(max_length=30)
 ```
 
+Once you have defined your models, you need to tell Django you’re going to use those models.
+Do this by editing your settings file and changing the INSTALLED_APPS setting to add the name of the module.
+```python
+INSTALLED_APPS = [
+    #...
+    'myapp',
+    #...
+]
+```
+When you add new apps to INSTALLED_APPS, be sure to run manage.py migrate, optionally making migrations for them first with manage.py makemigrations.
